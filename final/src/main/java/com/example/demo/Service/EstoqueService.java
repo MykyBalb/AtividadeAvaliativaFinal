@@ -28,9 +28,20 @@ public class EstoqueService {
         Optional<Estoque> estoqueOp = rpEstoque.findById(id);
         if (estoqueOp.isPresent()) {
             Estoque estoque = estoqueOp.get();
-            estoque.setQuantidade(estoqueDTO.setQuantidade());
+            estoque.setMateriaPrima(estoqueDTO.getMateriaPrima());
+            estoque.setProdutoAcabado(estoqueDTO.getProdutoAcabado());
             Estoque updated = rpEstoque.save(estoque);
             return Optional.of(estoqueDTO);
         }
+        return Optional.empty();
     }
+
+    public boolean delete(Long id) {
+        if (rpEstoque.existsById(id)) {
+            rpEstoque.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
 }

@@ -4,17 +4,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Estoque {
+public class Producao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEstoque;
-    private String materiaPrima;
-    private int produtoAcabado;
+    private Long idProducao;
+    private String tipoAco;
+    private String especificacao;
+    private int quantidade;
 }

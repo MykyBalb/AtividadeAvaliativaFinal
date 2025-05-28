@@ -12,13 +12,14 @@ import lombok.Setter;
 @NoArgsConstructor
 public class EstoqueDTO {
     private Long id;
-    private int quantidade;
+    private String materiaPrima;
+    private int produtoAcabado;
 
     public Estoque toEstoque() {
-        return new Estoque(this.id, this.quantidade);
+        return new Estoque(this.id, this.materiaPrima, this.produtoAcabado);
     }
 
     public static EstoqueDTO fromEstoque(Estoque e) {
-        return new EstoqueDTO(e.getIdEstoque(), e.getQuantidade());
+        return new EstoqueDTO(e.getIdEstoque(), e.getMateriaPrima(), e.getProdutoAcabado());
     }
 }
