@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.DTO.EstoqueDTO;
+import com.example.demo.Entity.Client;
 import com.example.demo.Entity.Estoque;
 import com.example.demo.Service.EstoqueService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,8 @@ public class EstoqueController {
 
     @GetMapping
     public ResponseEntity<List<Estoque>> getAll() {
-        List<Estoque> estoque = estoqueService.getAll();
-        return ResponseEntity.ok(estoque);
+        List<Estoque> client = estoqueService.getAll();
+        return ResponseEntity.ok(client);
     }
 
     @PostMapping
